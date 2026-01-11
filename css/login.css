@@ -1,0 +1,95 @@
+/* 
+    Document   : login
+    Created on : Jul 15, 2014, 10:03:31 PM
+    Author     : Alphonce
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body {
+  font: 1.2em 'Segoe UI', Arial, sans-serif;
+  background: url('../image/dhsudbg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1, ul {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  background: rgba(255, 255, 255, 0.95);
+  width: 600px;
+  padding: 0;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+#header {
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  background: #156abe;
+  border-bottom: none;
+  min-height: 100px;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  margin-left: 25px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+#logo img {
+  height: 70px;
+  margin-right: 20px;
+}
+
+#logo h2 {
+  color: #ffffff;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+#content {
+  background: #ffffff;
+  float: left;
+  width: 100%;
+  padding: 80px;
+  min-height: 300px;
+  box-sizing: border-box;
+}
+
+#content h1 {
+  font-size: 2em;
+  color: #1c1e21;
+  margin-bottom: 30px;
+}
+
+/* Added styles for username and password labels */
+#content td[style*="text-align: right"] {
+  font-size: 24px !important;
+  font-weight: bold;
+}
+
+.clear {
+  clear: both;
+}
+
+#footer {
+  background: #f0f2f5;
+  color: #1c1e21;
+  padding: 20px;
+  text-align: center;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 1.2em;
+}
