@@ -31,8 +31,6 @@ h1, ul {
 }
 
 #header {
-  border-top-right-radius: 12px;
-  border-top-left-radius: 12px;
   background: #156abe;
   border-bottom: none;
   min-height: 100px;

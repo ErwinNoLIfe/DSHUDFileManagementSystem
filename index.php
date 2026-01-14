@@ -23,10 +23,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
             function getPage(url){
-                $('#content').hide(1000,function(){
-                $('#content').load(url);
-                $('#content').show(1000,function(){});
-                });
+              $('#content').load(url);
             }
             
 
@@ -34,34 +31,38 @@
     </head>
     <body>
         <div id="wrap">
-            <div id="header">
-                <div id="logo">
-                    <h1 style="text-align: center;color: white;"><span><img src="image/logo.png" alt="logo" style="width: 50px; height: auto;"/></span>Document File Storage</h1>  
-                </div>
-                </div>
-            <div id="menu">
-                <ul>
-                <li><a href="#" onclick="getPage('User/Registration.php')">Registration</a></li>
-                <li><a href="#">File Management</a>
-                <ul>
-                <li><a href="#" onclick="getPage('Folder/View.php')">Add New Folder</a></li>
-                <li><a href="#" onclick="getPage('Upload/Upload.php')">Add New file</a></li>
-                <li><a href="#" onclick="getPage('View/View.php')">View All file</a></li>
-                <!--<li><a href="#">Edit file</a></li>-->
+            <!-- Bootstrap Navbar Top Bar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+              <a class="navbar-brand d-flex align-items-center" href="#" style="font-size: 1.35rem;">
+                <img src="image/logo.png" alt="logo" style="width: 50px; height: auto; margin-right: 0.75em;"/>
+                Document File Storage
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="getPage('User/Registration.php')">Registration</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">File Management</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#" onclick="getPage('Folder/View.php')">Add New Folder</a>
+                      <a class="dropdown-item" href="#" onclick="getPage('Upload/Upload.php')">Add New File</a>
+                      <a class="dropdown-item" href="#" onclick="getPage('View/View.php')">View All File</a>
+                    </div>
+                  </li>
                 </ul>
-                </li> 
-                <li><a href="logout.php">Logout</a></li>
-                
-                <li style="margin-top: 5px; margin-left: 10em;">
-                    <form action="Search/SearchResults.php" method="get" style="display: flex; align-items: center;">
-                        <input type="text" name="query" placeholder="Search files..." style="padding: 8px; border-radius: 4px; border: none; width: 200px; height: 30px;">
-                        <button type="submit" style="margin-left: 5px; padding: 8px 15px; background-color: #0d4b8f; color: white; border: none; border-radius: 4px; cursor: pointer;">Search</button>
-                    </form>
-                </li>
-                
-                
-                </ul>
-            </div>
+                <form class="form-inline my-2 my-lg-0 mr-3" action="Search/SearchResults.php" method="get">
+                  <input class="form-control mr-sm-2" type="text" name="query" placeholder="Search files..." aria-label="Search">
+                  <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <a class="btn btn-outline-light" href="logout.php">Logout</a>
+              </div>
+            </nav>
+            <!-- End Navbar -->
+
             <div id="main">
             <div id="content">
             <h1>Welcome to docsystem </h1>
@@ -101,61 +102,8 @@
             DHSUD-R5 2025
             </div>
         </div>
-        <!-- Modal -->
-<div class="modal fade" id="folderModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Create Folder</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body">
-        <input
-          type="text"
-          class="form-control"
-          id="folderNameInput"
-          placeholder="Folder name"
-        />
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancel
-        </button>
-        <button class="btn btn-primary" id="createFolderBtn">
-          Create
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-    </body>
-    <script>
-    function openFolderModal(onSubmit) {
-  const modalEl = document.getElementById("folderModal");
-  const modal = new bootstrap.Modal(modalEl);
-  const input = document.getElementById("folderNameInput");
-  const createBtn = document.getElementById("createFolderBtn");
-
-  input.value = "";
-
-  modalEl.addEventListener("shown.bs.modal", () => {
-    input.focus();
-  }, { once: true });
-
-  createBtn.onclick = () => {
-    const folderName = input.value.trim();
-    if (!folderName) return;
-
-    modal.hide();
-    onSubmit(folderName);
-  };
-
-  modal.show();
-}
-
+        
+      </body>
 
     </script>
 </html>
