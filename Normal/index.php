@@ -19,9 +19,38 @@
         <script type="text/javascript" src="../js/Registration.js"></script>
         <script>
             function getPage(url){
-              $('#content').load(url);
+                $('#content').hide(1000,function(){
+                $('#content').load(url);
+                $('#content').show(1000,function(){});
+                });
             }
         </script>
+            <script>
+    function openFolderModal(onSubmit) {
+  const modalEl = document.getElementById("folderModal");
+  const modal = new bootstrap.Modal(modalEl);
+  const input = document.getElementById("folderNameInput");
+  const createBtn = document.getElementById("createFolderBtn");
+
+  input.value = "";
+
+  modalEl.addEventListener("shown.bs.modal", () => {
+    input.focus();
+  }, { once: true });
+
+  createBtn.onclick = () => {
+    const folderName = input.value.trim();
+    if (!folderName) return;
+
+    modal.hide();
+    onSubmit(folderName);
+  };
+
+  modal.show();
+}
+
+
+    </script>
     </head>
     <body>
         <div id="wrap">
@@ -41,10 +70,9 @@
                 <!--<li><a href="#">Edit file</a></li>-->
                 </ul>
                 </li> 
-                <li style="margin-top: 5px;margin-left: 22em;">You login as : <?php echo $username?></li>
                 <li><a href="../logout.php">Logout</a></li>
+                <li style="margin-top: 5px;margin-left: 22em;">You login as : <?php echo $username?></li>
                 </ul>
-                
             </div>
             <div id="main">
             <div id="content">
@@ -86,5 +114,34 @@
             &copy;coders 2014
             </div>
         </div>
+                <!-- Modal -->
+<div class="modal fade" id="folderModal" tabindex="1000" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Folder</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <input
+          type="text"
+          class="form-control"
+          id="folderNameInput"
+          placeholder="Folder name"
+        />
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button class="btn btn-primary" id="createFolderBtn">
+          Create
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
     </body>
 </html>

@@ -6,203 +6,172 @@
         Stylesheet for DHSUD Document Management System
 */
 
-/* ===== GLOBAL ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font: 0.95em 'Segoe UI', Arial, sans-serif;
+  font: 0.9em 'Segoe UI', Arial, sans-serif;
   background-color: #f5f5f5;
-  color: #333;
 }
 
 h1, ul {
-  margin: 0;
-  padding: 0;
+ margin: 0;
+ padding: 0;
 }
 
-/* ===== HEADER ===== */
+#wrap {
+ background: #fff;
+ width: 1200px;
+ padding: 0px 20px;
+ margin: 0 auto;
+ box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 #header {
-  background: linear-gradient(135deg, #156abe, #0d4b8f);
-  border-bottom: 1px solid #0d4b8f;
-  min-height: 90px;
+ border-top-right-radius: 5px;
+ border-top-left-radius: 5px;
+ background: #156abe;
+ border-bottom: 1px solid #0d4b8f;
+ min-height: 90px;
 }
 
 #logo {
-  margin-left: 30px;
-  padding-top: 20px;
-  display: flex;
-  align-items: center;
+ margin-left: 30px;
+ padding-top: 15px;
+ display: flex;
+ align-items: center;
 }
 
 #logo h1 {
-  color: #fff;
-  font-size: 1.9em;
-  font-weight: 600;
+ color: #fff;
+ font-size: 1.8em;
 }
 
-/* ===== MENU ===== */
 #menu {
-  min-height: 60px;
-  padding: 10px 0;
-  background: #1a75d2;
-  border-bottom: 1px solid #0d4b8f;
+ min-height: 100px;
+ padding: 10px 0;
+ background: #1a75d2;
+ border-bottom: 1px solid #0d4b8f;
 }
 
 #menu ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
+ list-style-type: none;
+ padding: 0;
+ margin: 0;
 }
 
 #menu ul li {
-  position: relative;
-  margin-right: 10px;
+ margin-left: 10px;
+ background: transparent;
+ float: left;
 }
 
 #menu ul li a {
-  display: block;
-  padding: 10px 18px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-weight: 500;
+ display: block;
+ padding: 8px 15px;
+ color: #fff;
+ text-decoration: none;
+ border-radius: 4px;
+ transition: all 0.3s ease;
 }
 
 #menu ul li a:hover {
-  background: #0d4b8f;
+ background: #0d4b8f;
+ color: #fff;
 }
 
-/* ===== DROPDOWN ===== */
 #menu ul li ul {
-  position: absolute;
-  top: 45px;
-  left: 0;
-  display: none;
-  background: #1a75d2;
-  border-radius: 6px;
-  min-width: 200px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  z-index: 999;
+ position: absolute;
+ display: none;
+ background: #1a75d2;
+ border-radius: 4px;
+ box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 #menu ul li ul li {
-  width: 100%;
-}
-
-#menu ul li ul li a {
-  padding: 10px 15px;
+ float: none;
 }
 
 #menu ul li:hover ul {
-  display: block;
+ display: block;
 }
 
-/* ===== MAIN ===== */
 #main {
-  background: #fff;
-  padding: 20px;
-  position: relative;
-  min-height: 500px;
+ background: #fff;
+ padding: 20px;
+ position: relative;
 }
 
-/* ===== CONTENT ===== */
 #content {
-  background: #fff;
-  float: left;
-  width: 800px;
-  padding: 30px;
-  min-height: 450px;
-  border-right: 1px solid #e0e0e0;
+ background: #fff;
+ float: left;
+ width: 800px;
+ padding: 25px;
+ min-height: 400px;
+ border-right: 1px solid #e0e0e0;
 }
 
 #content h1 {
-  font-size: 1.9em;
-  color: #156abe;
-  margin-bottom: 20px;
+ font-size: 1.8em;
+ color: #156abe;
+ margin-bottom: 20px;
 }
 
-#content ul {
-  margin-left: 20px;
-}
-
-#content ul li {
-  margin-bottom: 10px;
-  font-size: 1.05em;
-}
-
-/* ===== SIDEBAR ===== */
 #side {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 300px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+ position: absolute;
+ top: 0;
+ right: 0;
+ width: 300px;
+ padding: 20px;
 }
 
 #side h3 {
-  color: #156abe;
-  margin-bottom: 15px;
-  font-size: 1.2em;
-  border-bottom: 2px solid #156abe;
-  padding-bottom: 5px;
+ color: #156abe;
+ margin-bottom: 15px;
 }
 
 #side table {
-  width: 100%;
-  border-collapse: collapse;
+ width: 100%;
+ border-collapse: collapse;
 }
 
 #side table td {
-  border: none;
-  padding: 8px 0;
-}
-
-/* ===== SIDEBAR LINKS ===== */
-td li {
-  list-style: none;
+ border: 1px solid #156abe;
+ background-color: #f8f9fa;
+ padding: 10px;
 }
 
 td a {
-  text-decoration: none;
-  color: #156abe;
-  font-size: 1.05em;
-  display: block;
-  padding: 10px;
-  border-radius: 6px;
-  background: #ffffff;
-  border: 1px solid #156abe;
-  transition: all 0.3s ease;
+ text-decoration: none;
+ color: #156abe;
+ font-size: 1.1em;
+ display: block;
+ padding: 8px;
+ border-radius: 4px;
+ transition: all 0.3s ease;
+}
+
+td li {
+ list-style-type: none;
+}
+
+td li:hover {
+ background-color: #156abe;
 }
 
 td li:hover a {
-  background-color: #156abe;
-  color: #fff;
+ color: #fff;
 }
 
-td li:active a {
-  background-color: #0d4b8f;
+td li:active {
+ background-color: #0d4b8f;
 }
 
-/* ===== CLEAR FIX ===== */
 .clear {
-  clear: both;
+ clear: both;
 }
 
-/* ===== FOOTER ===== */
 #footer {
-  background: #156abe;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-size: 0.9em;
-  margin-top: 20px;
+ background: #156abe;
+ color: #fff;
+ padding: 15px;
+ text-align: center;
+ font-size: 0.9em;
 }
