@@ -45,6 +45,8 @@ body {
   color: var(--text-dark);  /* UNCOMMENT THIS */
   -webkit-font-smoothing: antialiased;  /* UNCOMMENT THIS */
   -moz-osx-font-smoothing: grayscale;  /* UNCOMMENT THIS */
+  padding-top: 150px;  /* Account for fixed header */
+  padding-left: 250px;  /* Account for fixed sidebar */
 }
 
 h1, ul {
@@ -58,6 +60,11 @@ h1, ul {
   border-bottom: 3px solid var(--accent);
   min-height: 100px;
   box-shadow: var(--shadow-md);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 #logo {
@@ -171,21 +178,26 @@ h1, ul {
   background: var(--bg-white);
   padding: 0;
   position: relative;
-  min-height: calc(100vh - 156px);
-  max-width: calc(100% - 280px);
-  margin: 0 0 0 280px;
+  min-height: calc(100vh - 100px);  /* Account for fixed header */
+  max-width: calc(100% - 250px);  /* Account for fixed sidebar */
+  margin: 0;
   display: flex;
 }
 
 /* ===== SIDEBAR ===== */
 #side {
-  width: 280px;
-  min-width: 280px;
+  width: 250px;
+  min-width: 250px;
   padding: 24px;
   background: var(--bg-sidebar);
   box-shadow: var(--shadow-md);
   border-right: 1px solid var(--border-light);
   min-height: 500px;
+}
+
+/* ===== SIDEBAR (class) ===== */
+.sidebar {
+  z-index: 999;  /* Below header but above content */
 }
 
 /* ===== CONTENT ===== */
@@ -312,8 +324,13 @@ td li:active a {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media screen and (max-width: 992px) {
+  body {
+    padding-left: 0;  /* Remove sidebar padding on mobile */
+  }
+  
   #main {
     flex-direction: column;
+    max-width: 100%;
   }
   
   #side {
@@ -321,6 +338,13 @@ td li:active a {
     min-width: 100%;
     border-right: none;
     border-bottom: 1px solid var(--border-light);
+  }
+  
+  .sidebar {
+    position: relative !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
   }
   
   #content {
@@ -334,6 +358,15 @@ td li:active a {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    padding-top: 80px;  /* Reduced header padding on mobile */
+    padding-left: 0;
+  }
+  
+  #header {
+    min-height: 80px;
+  }
+  
   #logo {
     margin-left: 20px;
   }
@@ -353,6 +386,7 @@ td li:active a {
   
   #main {
     padding: 20px;
+    max-width: 100%;
   }
   
   #content h1 {

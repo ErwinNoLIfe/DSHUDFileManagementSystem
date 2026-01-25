@@ -49,6 +49,8 @@
                 </tr>
                 <tr>
                     <td><li><a href="#" onclick="getPage('ViewUser.php')">My Profile</a></li></td>
+
+                    
                 </tr>
 <!--                <tr>
                     <td><li><a href="#" onclick="getPage('Edit.php')">Change Password</a></li></td>
