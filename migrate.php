@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `folder` (
         FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
         ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+ 
 ";
 
 mysqli_query($con, $folderSql)

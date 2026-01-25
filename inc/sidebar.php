@@ -3,13 +3,13 @@
     <nav>
         <ul>
             <li class="active"><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#folders">Folders</a></li>
-            <li><a href="#files">Files</a></li>
-            <li><a href="#users">Users</a></li>
-            <li><a href="#settings">Settings</a></li>
+            <li><a href="#folders"onclick="getPage('../Folder/View.php')">Folders</a></li>
+            <li><a href="#files"onclick="getPage('../Upload/Upload.php')">Files</a></li>
+            <li><a href="#users"onclick="getPage('../User/ViewUser.php')">Users</a></li>
+            <li><a href="#settings"onclick="getPage('ViewUser.php')">Settings</a></li>
         </ul>
     </nav>
-</aside>
+</aside> 
 
 <style>
   :root {
@@ -40,7 +40,7 @@
     height: 85vh;
     position: fixed;
     left: 0;
-    top: 100px;
+    top: 150px;
     padding: 20px 0;
 }
 
