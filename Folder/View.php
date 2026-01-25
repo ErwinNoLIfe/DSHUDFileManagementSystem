@@ -32,7 +32,7 @@ $res=mysqli_query($con,$sql) or die(mysqli_error($con));
 <button class="btn btn-primary">Add Folder</button>
 <table id="viewdata">
 <tr>
-<th>No. Sample</th>
+<th>No. Sample Sample</th>
 <th>Name</th>
 <th>No. of Files</th>
 <th>Size</th>
